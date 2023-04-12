@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import BookCreate from './components/BookCreate';
-import BookEdit from './components/BookEdit';
 import BookList from './components/BookList';
-import BookShow from './components/BookShow';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -12,15 +10,12 @@ function App() {
       ...books,
       { id: Math.round(Math.random() * 9999) + 1, title: title },
     ]);
-    console.log('click', title);
   };
   return (
-    <div>
-      {books.length}
+    <div className="app">
       <BookCreate onCreate={createBook} />
-      <BookEdit />
-      <BookList />
-      <BookShow />
+
+      <BookList books={books} />
     </div>
   );
 }

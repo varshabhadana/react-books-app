@@ -1,7 +1,7 @@
 import React from 'react';
 
-const BookShow = () => {
-  return <div>BookShow</div>;
+const BookShow = ({ book }) => {
+  return <div className="book-show">{book.title}</div>;
 };
 
 export default BookShow;
